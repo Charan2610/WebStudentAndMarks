@@ -1,0 +1,72 @@
+
+<div lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<section>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center"> Add Student</h1>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form th:action="@{/students/Added}"  th:method="Post">
+
+
+                        <div class="form-group">
+                            <label >Roll Number</label>
+                            <input type="Number" required class="form-control" name="rollNo" placeholder="Roll Number">
+                        </div>
+
+                        <div class="form-group">
+                            <label >Name</label>
+                            <input type="text"
+                                   required
+                                   class="form-control"
+                                   name="name"
+                                   placeholder="Name">
+
+
+                        </div>
+                        <div class="form-group">
+                            <label >Age</label>
+                            <input type="Number" required class="form-control" name="age"  placeholder="Age">
+
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Select Gender</label>
+                            <select class="form-control"  name="gender" id="exampleFormControlSelect1">
+                                <option disabled selected>!--Select Gender--!</option>
+                                <option>Male</option>
+                                <option>Female</option>
+
+                            </select>
+                        </div>
+
+                        <div class="container text-center">
+                            <a class="btn btn-dark" href="/students/" role="button">Back</a>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+</div>

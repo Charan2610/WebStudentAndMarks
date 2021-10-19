@@ -1,0 +1,59 @@
+
+<div lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+
+<section>
+
+        <div class="container mt-3">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Student Marks</h3>
+
+
+                    <span style="float: right">
+                         <a class="btn btn-dark mr-3"  href="/students/" role="button">back</a>
+                        <a class="btn btn-primary" th:href="'/AddMark/'+${Marks[0].student_Id}" role="button">Add Mark</a>
+                    </span>
+
+<!--                    <p th:text="${Marks[0].student_Id}"></p>-->
+                </div>
+                <div class="card-body">
+
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Marks</th>
+                            <th scope="col">StudentID</th>
+                            <th scope="col">Action</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody th:each="mark:${Marks}" >
+                        <tr>
+                            <th><span th:text="${mark.subject}"></span></th>
+                            <td><span th:text="${mark.mark}"></span></td>
+                            <td><span th:text="${mark.student_Id}"></span></td>
+                            <td>
+                                <a class="btn btn-primary" th:href="'/delete/'+${mark.id}" role="button">Delete</a>
+
+                                <a class="btn btn-primary mr-3"th:href="'/updateMark/'+${mark.id}"  href="#" role="button">Update</a>
+                            </td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+</section>
+</div>

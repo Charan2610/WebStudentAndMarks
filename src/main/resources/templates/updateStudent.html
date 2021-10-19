@@ -1,0 +1,65 @@
+
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<section>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center"> Update Student</h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form  th:action="@{/students/Updated}" th:method="POST"  th:object="${Student}">
+
+                        <input type="hidden" class="form-control" th:value="${Student.id}"  name="id"  placeholder="Name">
+
+                        <div class="form-group">
+                            <label >Name</label>
+                            <input type="text" class="form-control" required th:value="${Student.name}"  name="name"  placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label >Age</label>
+                            <input type="Number" required class="form-control" th:value="${Student.age}" name="age"  placeholder="Age">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="hidden" required  class="form-control" th:value="${Student.rollNo}" name="rollNo" placeholder="Roll Number">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" required name="gender" th:value="${Student.gender}" id="exampleFormControlSelect1">
+                                <option disabled>!--Select Gender--!</option>
+                                <option  >Male</option>
+                                <option >Female</option>
+
+                            </select>
+                        </div>
+
+                        <div class="container text-center">
+
+                            <a class="btn btn-dark" href="/students/" role="button">Back</a>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+</html>
